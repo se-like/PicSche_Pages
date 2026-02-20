@@ -59,21 +59,44 @@
       font-size: 0.85rem;
       color: #64748b;
     }
+    .lang-switcher {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      color: #64748b;
+    }
+    .lang-switcher a { color: #3b82f6; text-decoration: none; }
+    .lang-switcher a:hover { text-decoration: underline; }
     a { color: #3b82f6; }
   </style>
 </head>
-<body>
+<body data-title-ja="PicSche - サポート・お問い合わせ" data-title-en="PicSche - Support &amp; Contact">
   <div class="card">
-    <h1>PicSche（ピクスケ）</h1>
-    <p class="subtitle">画像から予定を登録する iOS アプリ</p>
-    <p>PicSche に関するお問い合わせは、下記のメールアドレスまでお願いいたします。</p>
-    <div class="contact">
-      <h2>お問い合わせ</h2>
-      <a href="mailto:mkoji530@gmail.com" class="email">mkoji530@gmail.com</a>
+    <p class="lang-switcher"><a href="?lang=ja" data-lang="ja">日本語</a> | <a href="?lang=en" data-lang="en">English</a></p>
+    <div class="lang-ja">
+      <h1>PicSche（ピクスケ）</h1>
+      <p class="subtitle">画像から予定を登録する iOS アプリ</p>
+      <p>PicSche に関するお問い合わせは、下記のメールアドレスまでお願いいたします。</p>
+      <div class="contact">
+        <h2>お問い合わせ</h2>
+        <a href="mailto:mkoji530@gmail.com" class="email">mkoji530@gmail.com</a>
+      </div>
+      <div class="footer">
+        <a href="privacy.html">プライバシーポリシー</a> | <a href="terms.html">利用規約</a>
+      </div>
     </div>
-    <div class="footer">
-      <a href="privacy.html">プライバシーポリシー</a> | <a href="terms.html">利用規約</a>
+    <div class="lang-en" style="display: none;">
+      <h1>PicSche</h1>
+      <p class="subtitle">iOS app to add events from images to your calendar</p>
+      <p>For inquiries about PicSche, please contact us at the email address below.</p>
+      <div class="contact">
+        <h2>Contact</h2>
+        <a href="mailto:mkoji530@gmail.com" class="email">mkoji530@gmail.com</a>
+      </div>
+      <div class="footer">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+      </div>
     </div>
   </div>
+  <script src="lang-switcher.js"></script>
 </body>
 </html>

@@ -31,13 +31,18 @@
     .section h2 { font-size: 1rem; margin: 0 0 8px; color: #334155; }
     .section p { margin: 0; white-space: pre-line; }
     .footer { margin-top: 32px; font-size: 0.85rem; color: #64748b; }
+    .lang-switcher { font-size: 0.9rem; margin-bottom: 12px; color: #64748b; }
+    .lang-switcher a { color: #3b82f6; text-decoration: none; }
+    .lang-switcher a:hover { text-decoration: underline; }
     a { color: #3b82f6; }
   </style>
 </head>
-<body>
+<body data-title-ja="PicSche - 利用規約" data-title-en="PicSche - Terms of Service">
   <div class="card">
+    <p class="lang-switcher"><a href="?lang=ja" data-lang="ja">日本語</a> | <a href="?lang=en" data-lang="en">English</a></p>
+    <div class="lang-ja">
     <h1>利用規約</h1>
-    <p class="updated">最終更新：2026年2月12日</p>
+    <p class="updated">最終更新：2026年2月19日</p>
     <p>本利用規約（以下「本規約」）は、CloudCrowd（以下「当方」）が提供するPicSche（ピクスケ、以下「本アプリ」）の利用条件を定めるものです。本アプリをご利用いただく前に、必ず本規約をお読みください。</p>
 
     <div class="section"><h2>【第1条：規約への同意】</h2><p>1. ユーザーは、本アプリを利用することにより、本規約の全ての条項に同意したものとみなされます。
@@ -45,21 +50,23 @@
 3. 未成年者が本アプリを利用する場合は、保護者の同意が必要です。</p></div>
     <div class="section"><h2>【第2条：本アプリの概要】</h2><p>本アプリは、画像（学校のプリント、イベントチラシ等）から予定情報をAIによって自動抽出し、ユーザーのiOSカレンダーに登録する機能を提供します。
 
-画像抽出時に「画像補足欄」で入力した内容は、選択されたAIプロバイダーに送信されます（500文字まで）。個人情報や機密情報を入力しないようご注意ください。無料プランの利用回数は当方のサーバーで管理しており、端末識別用のIDを送信します。</p></div>
+画像抽出時に「画像補足欄」で入力した内容は、AI解析サービスに送信されます（500文字まで）。個人情報や機密情報を入力しないようご注意ください。無料プランの利用回数は当方のサーバーで管理しており、端末識別用のIDを送信します。</p></div>
     <div class="section"><h2>【第3条：提供条件】</h2><p>1. 本アプリの利用には、以下が必要です：
 　・iOS 18.0以降を搭載したiPhone
 　・インターネット接続環境
 　・カメラ・写真・カレンダーへのアクセス許可
 
-2. 本アプリは、画像から予定を抽出するために外部のAI解析サービス（Anthropic Claude、OpenAI GPT-4o、Google Gemini のいずれか、または当方が運用するAPI経由の Vertex AI）を利用するため、オフライン環境では使用できません。</p></div>
-    <div class="section"><h2>【第4条：利用料金】</h2><p>1. 本アプリは、以下の料金体系で提供されます：
-　・無料版：月3回まで画像解析機能を利用可能。広告（バナー広告・リワード広告）が表示されます。リワード広告を視聴することで、1回分の追加利用枠を獲得できますが、月あたり最大2回までです。
-　・ベーシック版（サブスクリプション）：月額150円（税込）。月10回まで利用可能。広告なし。
-　・プレミアム版（サブスクリプション）：月額300円（税込）。月30回まで利用可能。広告なし。
+2. 本アプリは、解析完了時にプッシュ通知をお届けするため、通知のアクセス許可をリクエストします。通知を許可しない場合でも、画像解析・カレンダー登録などの主要機能はご利用いただけます。
 
-2. ベーシック版・プレミアム版の購入は、App Store経由で行われ、Apple Inc.の利用規約が適用されます。
-3. サブスクリプションは自動更新され、月次でリセットされます。解約・返金については、Apple Inc.のポリシーに従います。
-4. 無料版で表示される広告は、Google AdMob（Google LLC 提供）により配信されます。</p></div>
+3. 本アプリは、画像から予定を抽出するために外部のAI解析サービスを利用するため、オフライン環境では使用できません。</p></div>
+    <div class="section"><h2>【第4条：利用料金】</h2><p>1. 本アプリは、以下の料金体系で提供されます：
+　・無料版：月1回まで無料で画像解析機能を利用可能。広告は表示されません。
+　・3回チャージ：3回分の利用権を100円（税込）で購入。購入月内のみ有効で、翌月への繰越はありません。プランとの併用が可能です。
+　・ベーシック版（サブスクリプション）：月額150円（税込）。月10回まで利用可能。利用回数は毎月1日にリセットされ、未使用分の翌月への繰越およびプラン変更による繰越はありません。
+　・プレミアム版（サブスクリプション）：月額300円（税込）。月20回まで利用可能。利用回数は毎月1日にリセットされ、未使用分の翌月への繰越およびプラン変更による繰越はありません。
+
+2. 3回チャージ・ベーシック版・プレミアム版の購入は、App Store経由で行われ、Apple Inc.の利用規約が適用されます。
+3. サブスクリプションは自動更新され、利用回数は毎月1日にリセットされます（未使用分の翌月への繰越およびプラン変更による繰越はありません）。解約・返金については、Apple Inc.のポリシーに従います。</p></div>
     <div class="section"><h2>【第5条：禁止事項】</h2><p>ユーザーは、本アプリの利用にあたり、以下の行為を行ってはなりません：
 
 1. 違法な目的での利用
@@ -86,7 +93,7 @@
 　本アプリは、ユーザーデータをサーバーに保存しません。iOSカレンダーに登録された予定の管理はユーザーの責任で行ってください。
 
 5. 第三者サービス
-　本アプリは、画像から予定を抽出するために、外部のAI解析サービス（Anthropic Inc. の Claude、OpenAI の GPT-4o、Google の Gemini、または当方が運用するAPI経由の Vertex AI のいずれか）を利用しています。同サービスの障害・変更により本アプリが正常に動作しなくなった場合でも、当方は責任を負いません。</p></div>
+　本アプリは、画像から予定を抽出するために、外部のAI解析サービスを利用しています。同サービスの障害・変更により本アプリが正常に動作しなくなった場合でも、当方は責任を負いません。</p></div>
     <div class="section"><h2>【第7条：知的財産権】</h2><p>1. 本アプリに関する著作権、商標権、その他の知的財産権は、すべて当方に帰属します。
 2. ユーザーは、本アプリの利用権を取得するのみであり、本アプリの所有権を取得するものではありません。
 3. ユーザーが本アプリにアップロードした画像の著作権は、ユーザーに帰属します。ただし、画像は解析後直ちに削除され、当方はこれを保存しません。</p></div>
@@ -105,8 +112,75 @@
     <div class="section"><h2>【第14条：お問い合わせ】</h2><p>本規約に関するご質問は、以下までお問い合わせください：
 メールアドレス：mkoji530@gmail.com</p></div>
 
-    <p class="footer">制定日：2025年2月7日　改訂：2026年2月12日<br>PicSche開発者：CloudCrowd</p>
+    <p class="footer">制定日：2025年2月7日　改訂：2026年2月19日<br>© 2026 CloudCrowd　PicSche開発者：CloudCrowd</p>
     <p class="footer"><a href="support.html">サポート・お問い合わせ</a> | <a href="privacy.html">プライバシーポリシー</a></p>
+    </div>
+    <div class="lang-en" style="display: none;">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: February 19, 2026</p>
+    <p>These Terms of Service ("Terms") set forth the conditions for use of PicSche (pronounced "Pikuske"; "this app") provided by CloudCrowd ("we"). Please read these Terms before using the app.</p>
+    <div class="section"><h2>Article 1: Agreement to Terms</h2><p>1. By using this app, you are deemed to have agreed to all provisions of these Terms.
+2. You may not use this app if you do not agree to these Terms.
+3. Minors must obtain parental consent before using this app.</p></div>
+    <div class="section"><h2>Article 2: App Overview</h2><p>This app automatically extracts schedule information from images (e.g., school handouts, event flyers) using AI and registers it to your iOS calendar.
+
+Content you enter in the "image context" field when extracting is sent to the selected AI provider (up to 500 characters). Please do not enter personal or confidential information. Free-tier usage is managed on our server; we send a device identifier.</p></div>
+    <div class="section"><h2>Article 3: Requirements</h2><p>1. Use of this app requires:
+　・iPhone with iOS 18.0 or later
+　・Internet connection
+　・Access permission for camera, photos, and calendar
+
+2. This app requests notification permission to send a push when analysis is complete. You can still use core features (image analysis, calendar registration) without allowing notifications.
+
+3. This app uses an external AI analysis service to extract schedules from images and cannot be used offline.</p></div>
+    <div class="section"><h2>Article 4: Fees</h2><p>1. This app is offered under the following pricing:
+　・Free: 1 image analysis per month. No ads.
+　・3 Uses Charge: 3 uses for ¥100 (tax included). Valid for the purchase month only; no rollover. Can be combined with subscriptions.
+　・Basic (subscription): ¥150/month (tax incl.). Up to 10 uses per month. Usage resets on the 1st of each month; no rollover.
+　・Premium (subscription): ¥300/month (tax incl.). Up to 20 uses per month. Usage resets on the 1st of each month; no rollover.
+
+2. 3 Uses Charge and Basic/Premium subscriptions are made through the App Store and are subject to Apple Inc.'s terms.
+3. Subscriptions auto-renew. Cancellation and refunds follow Apple Inc.'s policy.</p></div>
+    <div class="section"><h2>Article 5: Prohibited Acts</h2><p>Users must not:
+1. Use the app for illegal purposes
+2. Use images that infringe on third-party rights (copyright, portrait rights, privacy, etc.)
+3. Unauthorized modification or manipulation of the app
+4. Reverse engineering, decompilation, or disassembly of the app
+5. Sending excessive requests that overload servers
+6. Causing nuisance to other users or third parties
+7. Acts against public order and morals</p></div>
+    <div class="section"><h2>Article 6: Disclaimer</h2><p>1. AI Analysis Accuracy
+　We strive to provide accurate AI analysis but do not guarantee 100% accuracy. Please verify extracted dates and content yourself.
+
+2. Damages from Incorrect Registration
+　We assume no liability for damages (missed appointments, forgotten commitments, etc.) arising from incorrect calendar registration.
+
+3. Service Interruption
+　We may suspend or discontinue the service without notice in cases of maintenance, external AI analysis service failure, force majeure, etc. We assume no liability for such damages.
+
+4. Data Loss
+　We do not store user data on servers. Management of calendar events is the user's responsibility.
+
+5. Third-Party Services
+　This app uses an external AI analysis service to extract schedules from images. We assume no liability if the app fails to function due to service failure or changes.</p></div>
+    <div class="section"><h2>Article 7: Intellectual Property</h2><p>1. All intellectual property rights in this app belong to us.
+2. Users obtain only the right to use the app, not ownership.
+3. Copyright in images uploaded by users belongs to the user. Images are deleted immediately after analysis and are not stored.</p></div>
+    <div class="section"><h2>Article 8: Privacy</h2><p>Please refer to our separately stated "Privacy Policy" for handling of personal information.</p></div>
+    <div class="section"><h2>Article 9: Changes to Terms</h2><p>1. We may change these Terms without consent when the change benefits users generally or is reasonable in light of necessity and appropriateness.
+2. We will notify users in-app or on our website at least 7 days before changes take effect.
+3. Use of the app after the effective date constitutes agreement to the revised Terms.</p></div>
+    <div class="section"><h2>Article 10: Suspension</h2><p>We may suspend a user's access without prior notice if the user violates these Terms.</p></div>
+    <div class="section"><h2>Article 11: Service Termination</h2><p>1. We may terminate the service with at least 30 days' notice in the app.
+2. We assume no liability for damages resulting from service termination.</p></div>
+    <div class="section"><h2>Article 12: Governing Law</h2><p>These Terms are governed by and construed in accordance with the laws of Japan.</p></div>
+    <div class="section"><h2>Article 13: Severability</h2><p>If any provision is found invalid or unenforceable, the validity of other provisions remains unaffected.</p></div>
+    <div class="section"><h2>Article 14: Contact</h2><p>For questions regarding these Terms, please contact:
+Email: mkoji530@gmail.com</p></div>
+    <p class="footer">Effective date: February 7, 2025　Revised: February 19, 2026<br>© 2026 CloudCrowd　PicSche Developer: CloudCrowd</p>
+    <p class="footer"><a href="support.html">Support &amp; Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </div>
   </div>
+  <script src="lang-switcher.js"></script>
 </body>
 </html>

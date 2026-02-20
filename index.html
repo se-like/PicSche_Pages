@@ -25,6 +25,13 @@
       font-size: 0.95rem;
       margin-bottom: 32px;
     }
+    .lang-switcher {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      color: #64748b;
+    }
+    .lang-switcher a { color: #3b82f6; text-decoration: none; }
+    .lang-switcher a:hover { text-decoration: underline; }
     .links {
       display: flex;
       flex-direction: column;
@@ -46,13 +53,26 @@
     }
   </style>
 </head>
-<body>
-  <h1>PicSche</h1>
-  <p class="subtitle">画像から予定を登録する iOS アプリ</p>
-  <div class="links">
-    <a href="support.html">サポート・お問い合わせ</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="terms.html">利用規約</a>
+<body data-title-ja="PicSche" data-title-en="PicSche">
+  <p class="lang-switcher"><a href="?lang=ja" data-lang="ja">日本語</a> | <a href="?lang=en" data-lang="en">English</a></p>
+  <div class="lang-ja">
+    <h1>PicSche</h1>
+    <p class="subtitle">画像から予定を登録する iOS アプリ</p>
+    <div class="links">
+      <a href="support.html">サポート・お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+    </div>
   </div>
+  <div class="lang-en" style="display: none;">
+    <h1>PicSche</h1>
+    <p class="subtitle">iOS app to add events from images to your calendar</p>
+    <div class="links">
+      <a href="support.html">Support &amp; Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+  <script src="lang-switcher.js"></script>
 </body>
 </html>
