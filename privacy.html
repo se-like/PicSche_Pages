@@ -92,7 +92,7 @@
 ・ユーザーが選択・撮影した画像
 ・画像解析のための指示（画像の文脈説明用の「画像補足欄」で入力したテキストを含みます）
 ・無料プランでは利用回数を当方のサーバーで管理する場合があります。端末識別用のID（個人を特定しないランダムな文字列）を送信し、利用回数・対象月を当方のサーバーに保存することがあります。
-・利用の都度、利用種別・残高・日時を当方のクラウド（Firestore）に記録します。購入時は商品ID・金額・通貨・日時を記録します。不正防止およびサービス運営に必要な範囲で保持します。
+・利用状況および購入に関する記録を当方のシステムに保存することがあります。不正防止およびサービス運営に必要な範囲で一定期間保持します。
 
 (2) 送信目的
 予定情報（タイトル、日時、場所、補足事項）をAIによって自動抽出するため
@@ -150,7 +150,7 @@
 本アプリは、画像や予定本文をサーバーに保存しません。ただし、以下を当方のサーバーまたはクラウドに保存・保持することがあります：
 ・無料プランの利用回数管理を行う場合：利用回数・対象月を、端末識別用のIDと紐づけて当方のサーバーに保存することがあります
 ・プッシュ通知：デバイス識別子および解析完了記録を Google のクラウドサービスに保存
-・利用・購入ログ：不正防止およびサービス運営のため、当方のクラウド（Firestore）に一定期間保持します</p>
+・利用・購入に関する記録：不正防止およびサービス運営のため、当方のシステムに一定期間保持することがあります</p>
     </div>
 
     <div class="section">
@@ -235,7 +235,7 @@ Disabling: If you turn off notifications for PicSche in iOS Settings → Notific
 ・Images selected or captured by the user
 ・Instructions for image analysis (including text you enter in the "image context" field)
 ・For free-tier usage we may manage usage on our server and send a device identifier; usage count and the relevant month may be stored on our server.
-・On each use we record usage type, remaining balance, and timestamp to our cloud (Firestore). On purchase we record product ID, amount, currency, and timestamp. We retain this for fraud prevention and service operation.
+・We may save usage and purchase-related records to our systems. We retain them for a certain period as needed for fraud prevention and service operation.
 
 (2) Purpose of Transmission
 To automatically extract schedule information (title, date, location, notes) via AI
@@ -286,7 +286,7 @@ This app does NOT use information for:
 ・Extracted schedule information: Deleted from the app after calendar registration
 ・Registered calendar events: Stored in the iOS Calendar app (until the user deletes them)
 
-This app does not store images or schedule content on servers. We may store or retain the following: free-tier usage (usage count and month linked to a device identifier); push notification identifiers on Google's service; usage and purchase logs in our cloud (Firestore) for a certain period for fraud prevention and service operation.</p>
+This app does not store images or schedule content on servers. We may store or retain the following: free-tier usage (usage count and month linked to a device identifier); push notification identifiers on Google's service; usage and purchase-related records in our systems for a certain period for fraud prevention and service operation.</p>
     </div>
     <div class="section">
       <h2>5. Data Sharing</h2>
