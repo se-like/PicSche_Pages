@@ -67,21 +67,21 @@
       <p>本アプリは以下の情報にアクセスします：
 
 (1) カメラ・写真ライブラリ
-目的：予定情報が記載された画像（スケジュール表、イベントチラシ等）を選択・撮影するため
+目的：予定情報が記載された画像（学校のプリント、イベントチラシ等）を選択・撮影するため
 保存：画像は予定抽出後、直ちに削除され、本アプリ内には保存されません
 
 (2) カレンダー
-目的：抽出した予定情報をiOS/Androidカレンダーに登録するため
-保存：予定情報はOS標準カレンダーアプリに保存され、本アプリ独自のサーバーには保存されません
+目的：抽出した予定情報をiOSカレンダーに登録するため
+保存：予定情報はiOS標準カレンダーアプリに保存され、本アプリ独自のサーバーには保存されません
 
 (3) 画像内のテキスト情報
 目的：AI解析により予定情報（タイトル、日時、場所等）を抽出するため
 保存：抽出された予定情報は一時的にメモリに保持され、カレンダー登録後は削除されます
 
 (4) プッシュ通知用デバイス識別子
-目的：解析完了時に通知を送るため
-保存：Google LLCが提供するクラウドサービスに、端末識別用のIDと紐づけて保存されます。トークンは更新時に上書きされます。
-無効化：iOS/Androidの設定から通知をオフにすると、本アプリは新規の識別子登録を行いません。アプリ削除後は当該端末へ通知を送ることはありません。既存の識別子は、送信時に無効と判明した場合など、当方の運用に応じて記録から削除することがあります（アプリ削除のタイミングで自動的に削除されるわけではありません）。</p>
+目的：解析完了時に「解析が完了しました！」とプッシュ通知を送るため
+保存：Google LLC が提供するクラウドサービスに、端末識別用のIDと紐づけて保存されます。トークンは更新時に上書きされます。
+無効化：iOS の「設定」→「通知」→「PicSche」で通知をオフにすると、本アプリは新規の識別子登録を行いません。アプリ削除後は当該端末へ通知を送ることはありません。既存の識別子は、送信時に無効と判明した場合など、当方の運用に応じて記録から削除することがあります（アプリ削除のタイミングで自動的に削除されるわけではありません）。</p>
     </div>
 
     <div class="section">
@@ -91,25 +91,28 @@
 (1) 送信される情報
 ・ユーザーが選択・撮影した画像
 ・画像解析のための指示（「カスタマイズ欄」で入力したテキストを含みます）
-・無料プランでは利用回数を当方のサーバーで管理する場合があります。端末識別用のID（個人を特定しないランダムな文字列）を送信し、利用回数・対象月を当方のサーバーに保存することがあります。
+・無料プランでは利用回数を当方のサーバーで管理しています。端末識別用のID（個人を特定しないランダムな文字列）を当方のAPIに送信し、利用回数・対象月を当方のサーバーに保存します。これにより再インストール後も同一端末では利用回数が引き継がれます。
 ・利用状況および購入に関する記録を当方のシステムに保存することがあります。不正防止およびサービス運営に必要な範囲で一定期間保持します。
 
 (2) 送信目的
 予定情報（タイトル、日時、場所、補足事項）をAIによって自動抽出するため
 
 (3) カスタマイズ欄について
-カスタマイズ欄で入力した内容は、そのままAI解析サービスに送信されます。個人情報（氏名・住所・電話番号・メールアドレス等）や機密情報を入力しないようご注意ください。入力は500文字までに制限されています。
+カスタマイズ欄で入力した内容は、そのまま利用しているAIプロバイダーに送信されます。個人情報（氏名・住所・電話番号・メールアドレス等）や機密情報を入力しないようご注意ください。入力は500文字までに制限されています。
 
 (4) 利用するAIサービス
-本アプリは、画像から予定情報を抽出するために、以下のいずれか1つのAI解析サービスを利用します（ビルド設定またはアプリのバージョンにより異なります）。
+本アプリは、画像から予定情報を抽出するために、以下のいずれか1つのAI解析サービスを利用します（いずれも当方API経由のVertex AIに統一する場合があります。ビルド設定またはアプリのバージョンにより異なります）：
 ・Anthropic Claude（https://www.anthropic.com/privacy）
 ・OpenAI（https://openai.com/privacy）
 ・Google Gemini（https://policies.google.com/privacy）
-・Google Cloud（Vertex AI）（当方が運用するサーバー経由。https://cloud.google.com/terms/cloud-privacy-notice）
-機能向上のため、利用するサービスが予告なく変更される場合があります。変更時は本ポリシーを更新します。
+・Google Cloud（Vertex AI）（https://cloud.google.com/terms/cloud-privacy-notice）
+
+当方サーバー経由で処理する場合、リクエストはすべてGoogle Cloud（Vertex AI）のエンドポイントに送信されます。Vertex AI 上で提供されるモデル（Google製およびパートナーモデルを含む）のいずれを用いる場合も、適用されるのはVertex AI（Google Cloud）のプライバシーおよび利用規約であり、お客様のプロンプトや応答は第三者（モデル提供元を含む）に共有されません。
+
+機能向上のため、利用するAIサービスを予告なく切り替える場合があります。
 
 (5) データの学習利用について
-当方が運用するサーバー経由でGoogle Cloud（Vertex AI）を利用する場合、同サービスのサービス利用規約（Service Specific Terms, Section 17「Training Restriction」）により、当方が送信したデータは、当方の事前許可なしにGoogleのAI/MLモデルの学習または微調整に使用されないことが契約上保証されています。その他のAIプロバイダーを利用する場合は、各プロバイダーの利用規約に従います。
+当方が運用するサーバー経由でGoogle Cloud（Vertex AI）を利用する場合、同サービスのサービス利用規約（Service Specific Terms, Section 17「Training Restriction」）により、当方が送信したデータは、当方の事前許可なしにGoogleのAI/MLモデルの学習または微調整に使用されないことが契約上保証されています。この制限はVertex AI上のすべてのマネージドモデル（パートナーモデルを含む）に適用されます。その他のAIプロバイダーを利用する場合は、各プロバイダーの利用規約に従います。
 
 (6) データの取り扱い
 ・画像は解析完了後、直ちにサーバーから削除されます（当方サーバー経由で処理する場合）。各AIプロバイダーに送信されたデータは、各プロバイダーのプライバシーポリシーおよびデータ処理方針に従って処理されます。
@@ -119,7 +122,8 @@
 本アプリは、画像に含まれる可能性のある個人を特定できる情報（氏名、住所、電話番号等）を抽出しないよう努めています。ただし、画像内に含まれる情報の性質上、完全に防ぐことは保証できません。
 
 (8) プッシュ通知（Google Firebase）
-本アプリは、解析完了時の通知送信のため、Google LLCが提供するFirebaseを利用しています。
+本アプリは、解析完了時の通知送信のため、Google LLC が提供するFirebaseを利用しています。
+
 ・収集・保存される情報：デバイスに紐づく識別子、解析完了の記録（日時、利用量の概算等）
 ・利用目的：解析完了の通知送信、利用状況の集計・分析
 ・Googleのプライバシー：https://firebase.google.com/support/privacy
@@ -145,11 +149,11 @@
       <h2>【4. データの保持期間】</h2>
       <p>・画像データ：解析後即座に削除（保持期間：数秒）
 ・抽出された予定情報：カレンダー登録後、アプリ内から削除
-・カレンダーに登録された予定：OS標準カレンダーアプリに保存（ユーザーが削除するまで保持）
+・カレンダーに登録された予定：iOSカレンダーアプリに保存（ユーザーが削除するまで保持）
 
 本アプリは、画像や予定本文をサーバーに保存しません。ただし、以下を当方のサーバーまたはクラウドに保存・保持することがあります：
-・無料プランの利用回数管理：利用回数・対象月を、端末識別用のIDと紐づけて保存することがあります
-・プッシュ通知：デバイス識別子および解析完了記録をGoogleのクラウドサービスに保存
+・無料プランの利用回数管理を行う場合：利用回数・対象月を、端末識別用のIDと紐づけて当方のサーバーに保存することがあります
+・プッシュ通知：デバイス識別子および解析完了記録を Google のクラウドサービスに保存
 ・利用・購入に関する記録：不正防止およびサービス運営のため、当方のシステムに一定期間保持することがあります</p>
     </div>
 
@@ -173,9 +177,9 @@
     <div class="section">
       <h2>【7. ユーザーの権利】</h2>
       <p>ユーザーは以下の権利を有します：
-・カメラ・写真・カレンダー・通知へのアクセス許可の取り消し（iOS/Android設定から可能）
+・カメラ・写真・カレンダー・通知へのアクセス許可の取り消し（iOS の「設定」から可能）
 ・本アプリの削除（すべてのアプリデータが削除されます）
-・カレンダーに登録された予定の削除（OS標準カレンダーアプリから可能）</p>
+・カレンダーに登録された予定の削除（iOSカレンダーアプリから可能）</p>
     </div>
 
     <div class="section">
@@ -185,13 +189,14 @@
 
     <div class="section">
       <h2>【9. プライバシーポリシーの変更】</h2>
-      <p>本プライバシーポリシーは、法令の変更やアプリ機能の追加に伴い変更される場合があります。重要な変更がある場合は、アプリ内で通知します。</p>
+      <p>本プライバシーポリシーは、法令の変更やアプリ機能の追加に伴い、予告なく変更される場合があります。重要な変更がある場合は、アプリ内で通知します。</p>
     </div>
 
     <div class="section">
       <h2>【10. お問い合わせ】</h2>
       <p>本プライバシーポリシーに関するご質問やご意見は、以下までお問い合わせください：
-メールアドレス：mkoji530@gmail.com</p>
+メールアドレス：
+picsche-support@cloudcrowd.cloud</p>
     </div>
 
     <div class="section">
@@ -205,18 +210,18 @@
     <div class="lang-en" style="display: none;">
     <h1>Privacy Policy</h1>
     <p class="updated">Last updated: February 23, 2026</p>
-    <p>PicSche (pronounced "Pikuske"; "this app") respects your privacy and takes the protection of personal information seriously. This Privacy Policy explains what information we collect and how we use and protect it.</p>
+    <p>PicSche ("this app") respects your privacy and takes the protection of personal information seriously. This Privacy Policy explains what information we collect and how we use and protect it.</p>
     <div class="section">
       <h2>1. Information We Collect</h2>
       <p>This app accesses the following information:
 
 (1) Camera &amp; Photo Library
-Purpose: To select or capture images containing schedule information (e.g., schedule tables, event flyers)
+Purpose: To select or capture images containing schedule information (e.g., school handouts, event flyers)
 Storage: Images are deleted immediately after schedule extraction and are not stored within the app
 
 (2) Calendar
-Purpose: To register extracted schedule information to your iOS/Android calendar
-Storage: Schedule information is saved to the OS default calendar app and not to our own servers
+Purpose: To register extracted schedule information to your iOS calendar
+Storage: Schedule information is saved to the iOS Calendar app and not to our own servers
 
 (3) Text in Images
 Purpose: To extract schedule information (title, date, location, etc.) via AI analysis
@@ -225,7 +230,7 @@ Storage: Extracted information is temporarily held in memory and deleted after c
 (4) Push Notification Device Identifier
 Purpose: To send a push notification when analysis is complete (e.g., "Analysis complete!")
 Storage: Stored with a device identifier in a cloud service provided by Google LLC. Tokens are overwritten on update.
-Disabling: If you turn off notifications for PicSche in your iOS or Android settings, we will not register new identifiers. After you uninstall the app, we do not send notifications to that device. We may remove existing identifiers from our records when we find they are invalid (e.g., when a send fails) or as part of routine maintenance; they are not automatically deleted at the moment you uninstall.</p>
+Disabling: If you turn off notifications for PicSche in iOS Settings → Notifications, we will not register new identifiers. After you uninstall the app, we do not send notifications to that device. We may remove existing identifiers from our records when we find they are invalid (e.g., when a send fails) or as part of routine maintenance; they are not automatically deleted at the moment you uninstall.</p>
     </div>
     <div class="section">
       <h2>2. Third-Party Services</h2>
@@ -241,18 +246,21 @@ Disabling: If you turn off notifications for PicSche in your iOS or Android sett
 To automatically extract schedule information (title, date, location, notes) via AI
 
 (3) About the Image Context Field
-Content you enter in the customization field is sent to the selected AI provider as-is. Please do not enter personal information (name, address, phone number, email, etc.) or confidential information. Input is limited to 500 characters.
+Content you enter in the Customization field is sent to the AI provider in use as-is. Please do not enter personal information (name, address, phone number, email, etc.) or confidential information. Input is limited to 500 characters.
 
 (4) AI Services Used
-This app uses one of the following AI analysis services (depending on build configuration or app version):
+This app uses one of the following AI analysis services (we may unify to Vertex AI via our API; depending on build configuration or app version):
 ・Anthropic Claude (https://www.anthropic.com/privacy)
 ・OpenAI (https://openai.com/privacy)
 ・Google Gemini (https://policies.google.com/privacy)
 ・Google Cloud (Vertex AI) via our servers (https://cloud.google.com/terms/cloud-privacy-notice)
-The service used may change without notice for improved functionality. This policy will be updated when it does.
+
+When processing is done via our server, all requests are sent to Google Cloud (Vertex AI) endpoints. Regardless of which model is used on Vertex AI (including Google and partner models), Vertex AI (Google Cloud) privacy and terms apply; your prompts and responses are not shared with third parties (including model publishers).
+
+We may switch the AI service we use without notice for improved functionality.
 
 (5) Data and AI Training
-When we use Google Cloud (Vertex AI) via our servers, Google Cloud's Service Specific Terms (Section 17, "Training Restriction") contractually guarantee that data we send will not be used for training or fine-tuning Google's AI/ML models without our prior permission. When other AI providers are used, their respective terms apply.
+When we use Google Cloud (Vertex AI) via our servers, Google Cloud's Service Specific Terms (Section 17, "Training Restriction") contractually guarantee that data we send will not be used for training or fine-tuning Google's AI/ML models without our prior permission. This restriction applies to all managed models on Vertex AI, including partner models. When other AI providers are used, their respective terms apply.
 
 (6) Data Handling
 ・Images are deleted from our server immediately after analysis when processed via our server. Data sent to each AI provider is processed in accordance with that provider's privacy policy.
@@ -285,7 +293,7 @@ This app does NOT use information for:
       <h2>4. Data Retention</h2>
       <p>・Image data: Deleted immediately after analysis (retention: seconds)
 ・Extracted schedule information: Deleted from the app after calendar registration
-・Registered calendar events: Stored in the OS default calendar app (until the user deletes them)
+・Registered calendar events: Stored in the iOS Calendar app (until the user deletes them)
 
 This app does not store images or schedule content on servers. We may store or retain the following: free-tier usage (usage count and month linked to a device identifier); push notification identifiers on Google's service; usage and purchase-related records in our systems for a certain period for fraud prevention and service operation.</p>
     </div>
@@ -307,9 +315,9 @@ This app does not store images or schedule content on servers. We may store or r
     <div class="section">
       <h2>7. Your Rights</h2>
       <p>You have the right to:
-・Revoke access to camera, photos, calendar, and notifications (via iOS/Android settings)
+・Revoke access to camera, photos, calendar, and notifications (via iOS Settings → Notifications)
 ・Delete the app (all app data will be removed)
-・Delete calendar events (via the OS default calendar app)</p>
+・Delete calendar events (via the iOS Calendar app)</p>
     </div>
     <div class="section">
       <h2>8. Children's Privacy</h2>
@@ -322,7 +330,8 @@ This app does not store images or schedule content on servers. We may store or r
     <div class="section">
       <h2>10. Contact</h2>
       <p>For questions or feedback regarding this Privacy Policy, please contact:
-Email: mkoji530@gmail.com</p>
+Email:
+picsche-support@cloudcrowd.cloud</p>
     </div>
     <div class="section">
       <h2>11. Governing Law</h2>
