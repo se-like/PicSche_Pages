@@ -70,6 +70,10 @@
 目的：予定情報が記載された画像（学校のプリント、イベントチラシ等）を選択・撮影し、当社サーバーに送信してAIで予定を抽出するため
 保存：画像は予定抽出後、直ちに削除され、本アプリ内には保存されません
 
+(1-b) PDFファイル
+目的：予定情報が記載されたPDF（学校だより等）を選択し、当社サーバーに送信してAIで予定を抽出するため。PDFはページ画像化せず、ファイルのまま解析に用います
+保存：PDFは予定抽出後、直ちに削除され、本アプリ内には保存されません
+
 (2) カレンダー
 目的：抽出した予定情報をiOSカレンダーに登録するため
 保存：予定情報はiOS標準カレンダーアプリに保存され、本アプリ独自のサーバーには保存されません
@@ -86,11 +90,11 @@
 
     <div class="section">
       <h2>【2. 第三者サービスの利用】</h2>
-      <p>本アプリは、画像から予定情報を高精度で抽出するため、外部のAI解析サービスを利用しています。
+      <p>本アプリは、画像またはPDFから予定情報を高精度で抽出するため、外部のAI解析サービスを利用しています。
 
 (1) 送信される情報
-・ユーザーが選択・撮影した画像
-・画像解析のための指示（「カスタマイズ欄」で入力したテキストを含みます）
+・ユーザーが選択・撮影した画像、または選択したPDF
+・画像／PDF解析のための指示（「カスタマイズ欄」で入力したテキストを含みます）
 ・無料プランでは利用回数を当方のサーバーで管理しています。端末識別用のID（個人を特定しないランダムな文字列）を当方のAPIに送信し、利用回数・対象月を当方のサーバーに保存します。これにより再インストール後も同一端末では利用回数が引き継がれます。
 ・利用状況および購入に関する記録を当方のシステムに保存することがあります。不正防止およびサービス運営に必要な範囲で一定期間保持します。
 
@@ -222,6 +226,10 @@ picsche-support@cloudcrowd.cloud</p>
 Purpose: To select or capture images containing schedule information and send them to our server for AI-based schedule extraction
 Storage: Images are deleted immediately after schedule extraction and are not stored within the app
 
+(1-b) PDF Files
+Purpose: To select PDFs containing schedule information (e.g., school newsletters) and send them to our server for AI-based schedule extraction. PDFs are analyzed as files without converting pages to images on the device
+Storage: PDFs are deleted immediately after schedule extraction and are not stored within the app
+
 (2) Calendar
 Purpose: To register extracted schedule information to your iOS calendar
 Storage: Schedule information is saved to the iOS Calendar app and not to our own servers
@@ -237,11 +245,11 @@ Disabling: If you turn off notifications for PicSche in iOS Settings → Notific
     </div>
     <div class="section">
       <h2>2. Third-Party Services</h2>
-      <p>This app uses external AI analysis services to accurately extract schedule information from images.
+      <p>This app uses external AI analysis services to accurately extract schedule information from images or PDFs.
 
 (1) Information Sent
-・Images selected or captured by the user
-・Instructions for image analysis (including text you enter in the "customization" field)
+・Images selected or captured by the user, or PDFs selected by the user
+・Instructions for image/PDF analysis (including text you enter in the "customization" field)
 ・For free-tier usage we may manage usage on our server and send a device identifier; usage count and the relevant month may be stored on our server.
 ・We may save usage and purchase-related records to our systems. We retain them for a certain period as needed for fraud prevention and service operation.
 
